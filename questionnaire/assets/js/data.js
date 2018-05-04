@@ -62,7 +62,7 @@ function sendDataRecommandation() {
             /* Variables de l'événement, : préfixe : "ce_" */
 
             "event": "nps",				// Nom de l'événement à tracker si applicable. Non préfixé.
-            "score": selectedAnswer[5]
+            "ce_score": selectedAnswer[5]
         }
     };
     //console.log(data);

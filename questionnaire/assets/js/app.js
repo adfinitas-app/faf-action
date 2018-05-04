@@ -28,14 +28,14 @@ $(".answer").hover(
 
 $('#submit').click(function(e) {
     e.preventDefault();
-    if (validateForm()) {
+    /*if (validateForm()) {
         $('#form').fadeOut(function () {
             $('#merci').fadeIn();
             $('footer').fadeIn();
-        });
+        });*/
         sendData();
         sendDataRecommandation();
-    }
+    //}
 });
 $('.header .btn-header').click( function(e) {
     $('#begin').fadeOut(function() {
