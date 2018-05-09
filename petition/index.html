@@ -50,7 +50,7 @@
 							<span id="nb-signatures"></span> SIGNATAIRES</p>
 					</div>
 					<form id="form">
-						<select id="f_civility" name="civility" value="" class="required">
+						<select id="f_civility" name="civility" class="required">
 							<option value="" selected disabled hidden>Civilité</option>
 							<option value="Monsieur">Monsieur</option>
 							<option value="Madame">Madame</option>
@@ -61,7 +61,7 @@
 						<input id="f_phone" type="text" placeholder="Téléphone (facultatif)">
 						<div class="optin">
 							<input type="checkbox" id="optin" id="optin">
-							<label for="optin"><img id="imgCheckbox" src="https://s3.amazonaws.com/heroku-adfinitas-campaign/FAF-petition/check.png" /><p>Je m’oppose à recevoir de la prospection<br />de la part de l’association</p></label>
+							<label for="optin"><img alt="Je m’oppose à recevoir de la prospection" id="imgCheckbox" src="https://s3.amazonaws.com/heroku-adfinitas-campaign/FAF-petition/check.png" />Je m’oppose à recevoir de la prospection<br />de la part de l’association</label>
 						</div>
 						<input id="submit" type="submit" value="Je signe">
 					</form>
@@ -75,7 +75,7 @@
 
 						<p>Votre signature nous est précieuse pour faire progresser les droits des personnes déficientes visuelles. Avec vous, nous serons plus forts pour exiger des pouvoirs publics des avancées concrètes en matière d’accès aux savoir, aux pratiques artistiques et à la culture.<br /><br />
 							Aujourd’hui, faites un pas de plus avec nous. La Fédération des Aveugles de France compte sur votre soutien pour agir sur tous les fronts du handicap visuel pour et avec les personnes qui y sont confrontées.</p>
-						<a href="https://faf.iraiser.eu/b?cid=22&amount=6000" target="_blank"><button>Je fais un don</button></a>
+						<button><a href="https://faf.iraiser.eu/b?cid=22&amount=6000" target="_blank">Je fais un don</a></button>
 					</div>
 					<div class="row share">
 						<div class="small-9 medium-6 columns">
@@ -100,7 +100,7 @@
 				<p>Je recommanderais volontiers la Fédération<br />des Aveugles de France à mes proches </p>
 			</div>
 			<div class="large-1 columns show-for-large">
-				<img src="https://s3.amazonaws.com/heroku-adfinitas-campaign/FAF-petition/arrow-banniere.png">
+				<img alt="Je recommanderais volontiers la Fédération des Aveugles de France à mes proches" src="https://s3.amazonaws.com/heroku-adfinitas-campaign/FAF-petition/arrow-banniere.png">
 			</div>
 			<div class="small-12 large-7 columns form-satisfaction">
 				<p>Pas du tout</p>
@@ -123,10 +123,10 @@
 	</div>
 </section>
 <section id="letter">
-	<img src="https://s3.amazonaws.com/heroku-adfinitas-campaign/FAF-petition/x.png" class="close">
+	<img alt="Je ferme la lettre" src="https://s3.amazonaws.com/heroku-adfinitas-campaign/FAF-petition/x.png" class="close">
 	<div class="row">
 		<div class="small-12 large-8 small-centered columns">
-			<p class="title">Pétition à l’attention de Monsieur le Président de la République et de Monsieur le Premier Ministre</p>
+			<h2 >Pétition à l’attention de Monsieur le Président de la République et de Monsieur le Premier Ministre</h2>
 			<p>Monsieur le Président, Monsieur le Premier Ministre,<br /><br />
 
 				Les personnes aveugles et malvoyantes rencontrent encore trop d’obstacles sur le chemin de la vie ! La loi de 2005 a rendu obligatoire l’aménagement des bâtiments et des transports mais également l’accès aux savoirs, à l’information, aux lieux et aux produits de l’industrie culturelle… dans un délai de 10 ans.<br /><br />
@@ -149,9 +149,9 @@
 
 </section>
 
-<script src="http://code.jquery.com/jquery.min.js" type="text/javascript"></script>
-<script type="text/javascript" src="assets/js/intlTelInput.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.2.3/foundation.min.js" type="text/javascript"></script>
+<script src="http://code.jquery.com/jquery.min.js"></script>
+<script src="assets/js/intlTelInput.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.2.3/foundation.min.js"></script>
 <script src="https://www.gstatic.com/firebasejs/3.7.1/firebase.js"></script>
 <script>
     var config = {
@@ -183,7 +183,7 @@
 
     gtag('config', 'UA-19934337-7');
 </script>
-<script type="text/javascript" src="assets/js/app.js"></script>
-<script type="text/javascript" src="assets/js/data.js"></script>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/data.js"></script>
 </body>
 </html>

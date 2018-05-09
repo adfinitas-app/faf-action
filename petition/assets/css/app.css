@@ -218,16 +218,12 @@ form .optin label {
 	font-weight: normal;
 	font-style: normal;
 	font-stretch: normal;
-	line-height: normal;
+	line-height: 1.1;
 	letter-spacing: normal;
 	text-align: left;
 	color: #000000;
+	margin-top: 5px;
 	margin-left: 0;
-	vertical-align: middle;
-}
-form .optin label p {
-	display: inline-block;
-	margin-bottom: 0;
 	vertical-align: middle;
 }
 
@@ -262,9 +258,16 @@ footer a{
 	text-align: left;
 	color: #ffffff;
 }
-#letter p.title {
+#letter h2 {
 	font-weight: bold;
 	color: #fdc131;
+	font-family: 'Open Sans', serif;
+	font-size: 20px;
+	font-style: normal;
+	font-stretch: normal;
+	line-height: 1.45;
+	letter-spacing: normal;
+	text-align: left;
 }
 #letter {
 	display: none;
