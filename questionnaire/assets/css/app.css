@@ -176,7 +176,7 @@ only screen and (min-resolution: 2dppx) {
 #question-number span {
 	font-size: 40px;
 }
-.questions-container p {
+.questions-container h2 {
 	font-size: 35px;
 	font-weight: 500;
 	font-style: normal;
@@ -345,11 +345,7 @@ form .optin label {
 	text-align: left;
 	color: #000000;
 	margin-left: 0;
-	vertical-align: middle;
-}
-form .optin label p {
-	display: inline-block;
-	margin-bottom: 0;
+	margin-top: 5px;
 	vertical-align: middle;
 }
 
