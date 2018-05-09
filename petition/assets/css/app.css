@@ -325,7 +325,7 @@ footer a{
 	color: #fdc131;
 	text-transform: uppercase;
 }
-.merci-container button {
+.merci-container a.button {
 	margin-top: 28px;
 	width: 280px;
 	height: 62px;
