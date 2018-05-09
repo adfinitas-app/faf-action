@@ -96,7 +96,8 @@ only screen and (min-resolution: 2dppx) {
 	border: solid 1px #ffffff;
 	margin: 30px auto 0;
 }
-.body-container .text .btn:hover {
+.body-container .text .btn:hover,
+.body-container .text .btn:focus{
 	cursor: pointer;
 }
 .body-container .text .btn * {
@@ -124,7 +125,7 @@ only screen and (min-resolution: 2dppx) {
 
 .form-container {
 	width: 331px;
-	height: 457px;
+	height: 470px;
 	object-fit: contain;
 	background-color: #fdc131;
 	border: solid 1px #fdc131;
@@ -226,7 +227,14 @@ form .optin label {
 	margin-left: 0;
 	vertical-align: middle;
 }
-
+.form-container .obligatoire {
+	font-size: 12px !important;
+	line-height: 1.1 !important;
+	width: auto !important;
+	height: auto !important;
+	margin-top: 5px;
+	color: red !important;
+}
 footer {
 	position: absolute;
 	bottom: 0;
@@ -302,7 +310,8 @@ footer a{
 	top: 20px;
 	right: 20px;
 }
-#letter .close:hover {
+#letter .close:hover,
+#letter .close:focus{
 	cursor: pointer;
 }
 .merci-container {
@@ -422,7 +431,8 @@ footer a{
 #banniere-end .form-satisfaction .answer-container div.large {
 	padding: 3px 7px;
 }
-#banniere-end .form-satisfaction .answer-container div:hover {
+#banniere-end .form-satisfaction .answer-container div:hover,
+#banniere-end .form-satisfaction .answer-container div:focus{
 	cursor: pointer;
 	background-color: white;
 }

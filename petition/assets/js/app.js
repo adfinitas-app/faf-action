@@ -43,6 +43,7 @@ $("label[for='optin']").click(function() {
 
 $('.body-container .text .btn').click(function() {
     $('#letter').show();
+    $('#letter').focus();
 });
 $('#letter .close').click(function() {
     hideLetter();

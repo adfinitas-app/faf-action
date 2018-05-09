@@ -84,6 +84,7 @@ function changeQuestion(nb, selected) {
     });
     showElement(function() {
         removeActive();
+        $('#title').focus();
     });
 
     index = nb;
