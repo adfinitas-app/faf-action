@@ -34,14 +34,16 @@ function addVote() {
 $("label[for='optin']").click(function() {
     if (!checked) {
         $('#imgCheckbox').attr('src', 'https://s3.amazonaws.com/heroku-adfinitas-campaign/FAF-petition/check-v.png');
+        $('#optin').attr('aria-checked', 'true');
         checked = true;
     } else {
         checked = false;
         $('#imgCheckbox').attr('src', 'https://s3.amazonaws.com/heroku-adfinitas-campaign/FAF-petition/check.png');
+        $('#optin').attr('aria-checked', 'false');
     }
 });
 
-$('.body-container .text .btn').click(function() {
+$('#btn-letter').click(function() {
     $('#letter').show();
     $('#letter').focus();
 });
@@ -100,12 +102,14 @@ function validateForm() {
     var selectedOption = $('#f_civility option:selected');
 
 
+    $('.error').hide();
     $('#f_civility').removeClass("red-border");
     $('#form input').each( function() {
         $(this).removeClass('red-border');
 
         if ($(this).hasClass('required')) {
             if ($(this).val() === "") {
+                $('.error-generic').show();
                 $(this).addClass('red-border');
                 check = false;
             }
@@ -114,22 +118,27 @@ function validateForm() {
 
     if (selectedOption.val() === "") {
         $('#f_civility').addClass("red-border");
+        $('.error-civility').show();
         check = false;
     }
 
     if ($('#f_email').val() !== "") {
         if (!validateEmail($('#f_email').val())) {
+            $('.error-mail-wrong').show();
             $('#f_email').addClass('red-border');
             check = false;
         }
     }
     if ($('#f_phone').val() != "") {
         if (!$("#f_phone").intlTelInput("isValidNumber")) {
+            $('.error-phone-wrong').show();
             $('#f_phone').addClass('red-border');
             check = false;
         }
     }
 
+    if (!check)
+        $('form').focus();
 
     return check;
 }

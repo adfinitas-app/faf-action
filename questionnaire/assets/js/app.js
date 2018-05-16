@@ -37,7 +37,7 @@ $('#submit').click(function(e) {
         sendDataRecommandation();
     }
 });
-$('.header .btn-header').click( function(e) {
+$('.header .je-done-mon-avis').click( function(e) {
     $('#begin').fadeOut(function() {
         window.scroll(0, 0);
         $('#questions').fadeIn();
@@ -45,10 +45,22 @@ $('.header .btn-header').click( function(e) {
 });
 
 $('#f_male').click(function() {
-    $('#f_female').prop( "checked", false );
+    $(this).attr('aria-checked', 'true');
+    $('#f_female').prop( "checked", false);
+    $('#f_female').attr('aria-checked', 'false');
 });
 $('#f_female').click(function() {
     $('#f_male').prop( "checked", false );
+    $('#f_male').attr('aria-checked', 'false');
+    $(this).attr('aria-checked', 'true');
+});
+
+$("#optin").click(function() {
+    if ($(this).is(":checked")) {
+        $(this).attr('aria-checked', 'true');
+    } else {
+        $(this).attr('aria-checked', 'false');
+    }
 });
 
 
@@ -146,12 +158,14 @@ function validateForm() {
         selectedOption = "";
 
 
+    $('.error').hide();
     $('.civilite-container *').css('color','black');
     $('#form input').each( function() {
         $(this).removeClass('red-border');
 
         if ($(this).hasClass('required')) {
             if ($(this).val() === "") {
+                $('.error-generic').show();
                 $(this).addClass('red-border');
                 check = false;
             }
@@ -160,17 +174,20 @@ function validateForm() {
 
     if (selectedOption === "") {
         $('.civilite-container *').css('color','red');
+        $('.error-civility').show();
         check = false;
     }
 
     if ($('#f_email').val() !== "") {
         if (!validateEmail($('#f_email').val())) {
+            $('.error-mail-wrong').show();
             $('#f_email').addClass('red-border');
             check = false;
         }
     }
     if ($('#f_phone').val() != "") {
         if (!$("#f_phone").intlTelInput("isValidNumber")) {
+            $('.error-phone-wrong').show();
             $('#f_phone').addClass('red-border');
             check = false;
         }
