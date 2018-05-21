@@ -186,7 +186,8 @@ only screen and (min-resolution: 2dppx) {
 	letter-spacing: normal;
 	color: #ffffff;
 }
-.questions-container p {
+p.precision {
+	text-align: left;
 	font-size: 14px;
 	color: #ffffff;
 }
@@ -214,10 +215,6 @@ only screen and (min-resolution: 2dppx) {
 	margin-right:5px;
 	margin-left: 5px;
 }
-.answer-container .answer:hover,
-.answer-container .answer:focus{
-	cursor: pointer;
-}
 .answer-container .answer * {
 	vertical-align: middle;
 	display: inline-block;
@@ -242,6 +239,7 @@ only screen and (min-resolution: 2dppx) {
 	color: black !important;
 }
 .error {
+	text-align: left !important;
 	color: red !important;
 	font-family: Helvetica, Arial, Verdana, sans-serif;
 	font-weight: bold;
@@ -249,7 +247,6 @@ only screen and (min-resolution: 2dppx) {
 	line-height: 1.2;
 	text-transform: none;
 	margin-bottom: 0;
-	visibility: hidden;
 }
 .error-header-form {
 	margin-top: 10px !important;
@@ -277,6 +274,13 @@ only screen and (min-resolution: 2dppx) {
 	letter-spacing: normal;
 	text-align: center;
 	color: #000000;
+}
+
+form .error {
+	display: none;
+	margin-bottom: 0;
+	color: red;
+	font-size: 12px;
 }
 form input,
 form select {
@@ -436,7 +440,6 @@ form .optin label {
 	vertical-align: middle;
 	border: 1px solid #ddd;
 	-webkit-appearance: none;
-	outline: none;
 	cursor: pointer;
 }
 

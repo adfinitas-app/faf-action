@@ -125,7 +125,6 @@ only screen and (min-resolution: 2dppx) {
 
 .form-container {
 	width: 331px;
-	height: 470px;
 	object-fit: contain;
 	background-color: #fdc131;
 	border: solid 1px #fdc131;
@@ -133,6 +132,7 @@ only screen and (min-resolution: 2dppx) {
 	padding-right: 28px;
 	padding-top: 24px;
 }
+
 .form-container .title {
 	margin-bottom: 5px;
 }
@@ -156,6 +156,12 @@ only screen and (min-resolution: 2dppx) {
 	text-align: left;
 	color: #000000;
 	margin-left: 5px;
+}
+form .error {
+	display: none;
+	margin-bottom: 0;
+	color: red;
+	font-size: 12px;
 }
 form input,
 form select {
@@ -233,7 +239,7 @@ form .optin label {
 	width: auto !important;
 	height: auto !important;
 	margin-top: 5px;
-	color: red !important;
+	color: purple !important;
 }
 footer {
 	position: absolute;
@@ -251,7 +257,7 @@ footer a{
 	font-stretch: normal;
 	letter-spacing: normal;
 	text-align: center;
-	color: #8e8e8e;
+	color: purple;
 	line-height: 1.3;
 }
 

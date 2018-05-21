@@ -23,14 +23,14 @@
 		<div class="row max-width">
 			<div class="row top">
 				<div class="large-8 columns">
-					<a href="https://www.aveuglesdefrance.org/" target="_blank"><img class="Logo" alt="Fédération des aveugles de France - S'ouvre dans un nouvel onglet" src="https://s3.amazonaws.com/heroku-adfinitas-campaign/FAF-petition/logo.png"></a>
+					<a href="https://www.aveuglesdefrance.org/" target="_blank"><img class="Logo" alt="Fédération des aveugles de France - S'ouvre dans une nouvelle fenêtre" src="https://s3.amazonaws.com/heroku-adfinitas-campaign/FAF-petition/logo.png"></a>
 					<h1>À quand la palme de l’accessibilité pour la France&nbsp;?</h1>
 					<img alt="" src="https://s3.amazonaws.com/heroku-adfinitas-campaign/FAF-petition/palm.png">
 				</div>
 				<div class="large-3 columns rs">
-					<a href="https://www.facebook.com/aveuglesdefrance" target="_blank"><img alt="Facebook Fédération des aveugles de France - S'ouvre dans un nouvel onglet" src="https://s3.amazonaws.com/heroku-adfinitas-campaign/FAF-petition/fb.png"></a>
-					<a href="https://twitter.com/Aveugles_France" target="_blank"><img alt="Twitter Fédération des aveugles de France - S'ouvre dans un nouvel onglet" src="https://s3.amazonaws.com/heroku-adfinitas-campaign/FAF-petition/tw.png"></a>
-					<a href="https://www.youtube.com/user/FAFParis" target="_blank"><img alt="Youtube Fédération des aveugles de France - S'ouvre dans un nouvel onglet" src="https://s3.amazonaws.com/heroku-adfinitas-campaign/FAF-petition/yt.png"></a>
+					<a href="https://www.facebook.com/aveuglesdefrance" target="_blank"><img alt="Facebook Fédération des aveugles de France - S'ouvre dans une nouvelle fenêtre" src="https://s3.amazonaws.com/heroku-adfinitas-campaign/FAF-petition/fb.png"></a>
+					<a href="https://twitter.com/Aveugles_France" target="_blank"><img alt="Twitter Fédération des aveugles de France - S'ouvre dans une nouvelle fenêtre" src="https://s3.amazonaws.com/heroku-adfinitas-campaign/FAF-petition/tw.png"></a>
+					<a href="https://www.youtube.com/user/FAFParis" target="_blank"><img alt="Youtube Fédération des aveugles de France - S'ouvre dans une nouvelle fenêtre" src="https://s3.amazonaws.com/heroku-adfinitas-campaign/FAF-petition/yt.png"></a>
 				</div>
 
 			</div>
@@ -38,20 +38,26 @@
 				<div class="small-12 small-centered large-uncentered medium-10 large-offset-1 large-5 columns text">
 					<p class="title">Depuis 1917, la Fédération des Aveugles de France s’engage sur tous les fronts du handicap visuel</p>
 					<p>Face aux inégalités persistantes dans le domaine de l’accessibilité pour les personnes aveugles et malvoyantes, la Fédération des Aveugles de France interpelle le Président de la République et son Premier Ministre. Merci de joindre votre voix à la sienne pour que la palme de l’accessibilité puisse être décernée au plus vite à la France.</p>
-					<div class="btn">
-						<img alt="JE DÉCOUVRE LA LETTRE" src="https://s3.amazonaws.com/heroku-adfinitas-campaign/FAF-petition/arrow.png">
-						<p>JE DÉCOUVRE LA LETTRE</p>
-					</div>
+					<a id="btn-letter">
+						<div class="btn">
+							<img alt="JE DÉCOUVRE LA LETTRE" src="https://s3.amazonaws.com/heroku-adfinitas-campaign/FAF-petition/arrow.png">
+							<p>JE DÉCOUVRE LA LETTRE</p>
+						</div>
+					</a>
 				</div>
 				<div class="small-12 large-offset-1 large-5 columns form-container">
 					<div class="title">
 						<img alt="JE DÉCOUVRE LA LETTRE" src="https://s3.amazonaws.com/heroku-adfinitas-campaign/FAF-petition/pen.png">
 						<p>REJOIGNEZ  LES<br />
 							<span id="nb-signatures"></span> SIGNATAIRES</p>
-						<p class="obligatoire">Les champs marqués avec un * sont oligatoires</p>
+						<p class="obligatoire">Les champs marqués avec un * sont obligatoires</p>
 					</div>
 					<form id="form">
-						<select id="f_civility" name="civility" class="required" title="Civility*" required>
+						<p class="error error-generic">Ces champs sont obligatoires</p>
+						<p class="error error-civility">Merci de renseigner votre civilité</p>
+						<p class="error error-mail-wrong">Le format de l'e-mail est incorrect</p>
+						<p class="error error-phone-wrong">Le format du téléphone est incorrect</p>
+						<select id="f_civility" name="civilite" class="required" title="Civilité*" required tabindex="0">
 							<option value="" selected disabled hidden>Civilité</option>
 							<option value="Monsieur">Monsieur</option>
 							<option value="Madame">Madame</option>
@@ -60,9 +66,12 @@
 						<input id="f_lastname" type="text" placeholder="Nom*" title="Nom*" class="required" required>
 						<input id="f_firstname" type="text" placeholder="Prénom*" title="Prénom*" class="required" required>
 						<input id="f_phone" type="text" placeholder="Téléphone (facultatif)" title="Téléphone (facultatif)">
-						<div class="optin">
-							<input type="checkbox" id="optin" id="optin">
-							<label for="optin"><img alt="Je m’oppose à recevoir de la prospection" id="imgCheckbox" src="https://s3.amazonaws.com/heroku-adfinitas-campaign/FAF-petition/check.png" />Je m’oppose à recevoir de la prospection<br />de la part de l’association</label>
+						<div class="optin" role="group">
+							<input type="checkbox" id="optin" aria-checked="false" role="checkbox" tabindex="0" aria-labelledby="optin">
+							<label for="optin">
+								<img aria-hidden="true" alt="Je m’oppose à recevoir de la prospection" id="imgCheckbox" src="https://s3.amazonaws.com/heroku-adfinitas-campaign/FAF-petition/check.png" />
+								Je m’oppose à recevoir de la prospection<br />de la part de l’association
+							</label>
 						</div>
 						<input id="submit" type="submit" value="Je signe">
 					</form>
@@ -76,7 +85,7 @@
 
 						<p>Votre signature nous est précieuse pour faire progresser les droits des personnes déficientes visuelles. Avec vous, nous serons plus forts pour exiger des pouvoirs publics des avancées concrètes en matière d’accès aux savoir, aux pratiques artistiques et à la culture.<br /><br />
 							Aujourd’hui, faites un pas de plus avec nous. La Fédération des Aveugles de France compte sur votre soutien pour agir sur tous les fronts du handicap visuel pour et avec les personnes qui y sont confrontées.</p>
-						<a class="button" href="https://faf.iraiser.eu/b?cid=22&amount=6000" target="_blank">Je fais un don</a>
+						<a class="button" href="https://faf.iraiser.eu/b?cid=22&amount=6000" target="_blank" title="Je fais un don - S'ouvre dans une nouvelle fenêtre">Je fais un don</a>
 					</div>
 					<div class="row share">
 						<div class="small-9 medium-6 columns">
@@ -84,8 +93,8 @@
 								<span class="bold">partager notre pétition&nbsp;!</span></p>
 						</div>
 						<div class="small-3 medium-6 columns">
-							<a href="https://www.facebook.com/share.php?u=http://action.aveuglesdefrance.org/petition" target="_blank"><img alt="Facebook Fédération des aveugles de France - S'ouvre dans un nouvel onglet" src="https://s3.amazonaws.com/heroku-adfinitas-campaign/FAF-petition/fb-big.png"></a>
-							<a href="https://twitter.com/share?url=http://action.aveuglesdefrance.org/petition" target="_blank"><img alt="Twitter Fédération des aveugles de France - S'ouvre dans un nouvel onglet" src="https://s3.amazonaws.com/heroku-adfinitas-campaign/FAF-petition/tw-big.png"></a>
+							<a href="https://www.facebook.com/share.php?u=http://action.aveuglesdefrance.org/petition" target="_blank"><img alt="Facebook Fédération des aveugles de France - S'ouvre dans une nouvelle fenêtre" src="https://s3.amazonaws.com/heroku-adfinitas-campaign/FAF-petition/fb-big.png"></a>
+							<a href="https://twitter.com/share?url=http://action.aveuglesdefrance.org/petition" target="_blank"><img alt="Twitter Fédération des aveugles de France - S'ouvre dans une nouvelle fenêtre" src="https://s3.amazonaws.com/heroku-adfinitas-campaign/FAF-petition/tw-big.png"></a>
 						</div>
 					</div>
 				</div>
@@ -123,7 +132,7 @@
 		</div>
 	</div>
 </section>
-<section id="letter">
+<section id="letter" tabindex="-1">
 	<img alt="Je ferme la lettre" src="https://s3.amazonaws.com/heroku-adfinitas-campaign/FAF-petition/x.png" class="close">
 	<div class="row">
 		<div class="small-12 large-8 small-centered columns">
