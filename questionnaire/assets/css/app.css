@@ -234,7 +234,7 @@ p.precision {
 
 }
 .select div,
-.active div{
+.answer-container .answer.active .number {
 	background-color: #eec216;
 	color: black !important;
 }
