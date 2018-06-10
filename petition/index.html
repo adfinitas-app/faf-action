@@ -38,7 +38,7 @@
 				<div class="small-12 small-centered large-uncentered medium-10 large-offset-1 large-5 columns text">
 					<p class="title">Depuis 1917, la Fédération des Aveugles de France s’engage sur tous les fronts du handicap visuel</p>
 					<p>Face aux inégalités persistantes dans le domaine de l’accessibilité pour les personnes aveugles et malvoyantes, la Fédération des Aveugles de France interpelle le Président de la République et son Premier Ministre. Merci de joindre votre voix à la sienne pour que la palme de l’accessibilité puisse être décernée au plus vite à la France.</p>
-					<a id="btn-letter">
+					<a id="btn-letter" href="#letter">
 						<div class="btn">
 							<img alt="JE DÉCOUVRE LA LETTRE" src="https://s3.amazonaws.com/heroku-adfinitas-campaign/FAF-petition/arrow.png">
 							<p>JE DÉCOUVRE LA LETTRE</p>
@@ -53,8 +53,10 @@
 						<p class="obligatoire">Les champs marqués avec un * sont obligatoires</p>
 					</div>
 					<form id="form">
-						<p class="error error-generic">Ces champs sont obligatoires</p>
+						<p class="error error-firstname">Merci de renseigner votre prénom</p>
+						<p class="error error-lastname">Merci de renseigner votre nom de famille</p>
 						<p class="error error-civility">Merci de renseigner votre civilité</p>
+						<p class="error error-mail">Merci de renseigner votre email</p>
 						<p class="error error-mail-wrong">Le format de l'e-mail est incorrect</p>
 						<p class="error error-phone-wrong">Le format du téléphone est incorrect</p>
 						<select id="f_civility" name="civilite" class="required" title="Civilité*" required tabindex="0">
@@ -102,7 +104,7 @@
 		</div>
 
 		<footer>
-			<p>2018 Fédération des Aveugles de France  -  <a href="https://www.aveuglesdefrance.org/conditions-generales-d-utilisation" target="_blank">Mentions Légales</a>  -  <a href="https://www.aveuglesdefrance.org/contact" target="_blank">Contact</a></p>
+			<p>2018 Fédération des Aveugles de France  -  <a href="https://www.aveuglesdefrance.org/conditions-generales-d-utilisation" target="_blank" title="Mentions légales - S'ouvre dans une nouvelle fenêtre">Mentions Légales</a>  -  <a href="https://www.aveuglesdefrance.org/contact" target="_blank" title="Contact - S'ouvre dans une nouvelle fenêtre">Contact</a></p>
 		</footer>
 
 		<div id="banniere-end" class="row">
@@ -110,21 +112,22 @@
 				<p>Je recommanderais volontiers la Fédération<br />des Aveugles de France à mes proches </p>
 			</div>
 			<div class="large-1 columns show-for-large">
-				<img alt="Je recommanderais volontiers la Fédération des Aveugles de France à mes proches" src="https://s3.amazonaws.com/heroku-adfinitas-campaign/FAF-petition/arrow-banniere.png">
+				<img alt="" src="https://s3.amazonaws.com/heroku-adfinitas-campaign/FAF-petition/arrow-banniere.png">
 			</div>
 			<div class="small-12 large-7 columns form-satisfaction">
+				<p class="precision">Choisissez une note de 1 à 10, 1 étant la valeur minimum et 10 la valeur maximum</p>
 				<p>Pas du tout</p>
 				<div class="answer-container">
-					<div>1</div>
-					<div>2</div>
-					<div>3</div>
-					<div>4</div>
-					<div>5</div>
-					<div>6</div>
-					<div>7</div>
-					<div>8</div>
-					<div>9</div>
-					<div class="large">10</div>
+					<a href="">1</a>
+					<a href="">2</a>
+					<a href="">3</a>
+					<a href="">4</a>
+					<a href="">5</a>
+					<a href="">6</a>
+					<a href="">7</a>
+					<a href="">8</a>
+					<a href="">9</a>
+					<a href="" class="large">10</a>
 				</div>
 				<p>Tout à fait</p>
 
@@ -133,7 +136,8 @@
 	</div>
 </section>
 <section id="letter" tabindex="-1">
-	<img alt="Je ferme la lettre" src="https://s3.amazonaws.com/heroku-adfinitas-campaign/FAF-petition/x.png" class="close">
+	<a href="#close" class="close"><img alt="Je ferme la lettre" src="https://s3.amazonaws.com/heroku-adfinitas-campaign/FAF-petition/x.png"></a>
+
 	<div class="row">
 		<div class="small-12 large-8 small-centered columns">
 			<h2 >Pétition à l’attention de Monsieur le Président de la République et de Monsieur le Premier Ministre</h2>

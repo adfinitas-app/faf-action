@@ -1,4 +1,6 @@
 var checked = false;
+var tabbableElements = $('a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, *[tabindex], *[contenteditable]');
+
 preload([
     'https://s3.amazonaws.com/heroku-adfinitas-campaign/FAF-petition/rect-ok.jpg'
 ]);
@@ -45,16 +47,24 @@ $("label[for='optin']").click(function() {
 
 $('#btn-letter').click(function() {
     $('#letter').show();
+
+
+
+    disableTabbingOnPage(tabbableElements);
+    enableTabbingOnModal(tabbableElements);
+
     $('#letter').focus();
 });
 $('#letter .close').click(function() {
     hideLetter();
+    reEnableTabbingOnPage(tabbableElements);
+    $($(':focus')).focus();
 });
 
 $('#submit').click(function(e) {
     e.preventDefault();
     if (validateForm()) {
-        addVote();
+        //addVote();
         $('.body-container').fadeOut(function() {
             $('.merci-container').fadeIn(function() {
                 $('#banniere-end').slideDown("slow", function() {
@@ -62,12 +72,12 @@ $('#submit').click(function(e) {
                 });
             });
         });
-        sendData();
+        //sendData();
     }
 });
 
 var text;
-$("#banniere-end .form-satisfaction .answer-container div").hover(
+$("#banniere-end .form-satisfaction .answer-container a").hover(
     function() {
         text = $(this).text();
         $(this).text(".");
@@ -76,8 +86,9 @@ $("#banniere-end .form-satisfaction .answer-container div").hover(
         $(this).text(text);
         $(this).css('background-image','none');
     }
-).click( function() {
-    sendDataFinalBanniere($(this).index() + 1);
+).click( function(e) {
+    e.preventDefault();
+    //sendDataFinalBanniere($(this).index() + 1);
     setTimeout(function () {
         $('#banniere-end').slideUp("slow", function() {
             $('.body').removeClass('margin-body');
@@ -96,31 +107,61 @@ function hideLetter() {
     $('#letter').hide();
 }
 
+function disableTabbingOnPage(tabbableElements) {
+    $.each(tabbableElements, function (index, element) {
+        $(element).attr('tabindex', '-1');
+    })
+}
+
+function enableTabbingOnModal(tabbableElements) {
+    $.each(tabbableElements, function (index, element) {
+        if($(element).parents('#letter').length) {
+            //element is inside of the modal
+            $(element).attr('tabindex', '0');
+        }
+    })
+}
+
+function reEnableTabbingOnPage(tabbableElements) {
+    $.each(tabbableElements, function (index, element) {
+        $(element).attr('tabindex', '0');
+    })
+}
+
 
 function validateForm() {
     var check = true;
-    var selectedOption = $('#f_civility option:selected');
-
 
     $('.error').hide();
     $('#f_civility').removeClass("red-border");
     $('#form input').each( function() {
         $(this).removeClass('red-border');
-
-        if ($(this).hasClass('required')) {
-            if ($(this).val() === "") {
-                $('.error-generic').show();
-                $(this).addClass('red-border');
-                check = false;
-            }
-        }
     });
 
-    if (selectedOption.val() === "") {
+
+
+    if ($("#f_firstname").val() === "") {
+        $('.error-firstname').show();
+        $("#f_firstname").addClass('red-border');
+        check = false;
+    }
+    if ($("#f_lastname").val() === "") {
+        $('.error-lastname').show();
+        $("#f_lastname").addClass('red-border');
+        check = false;
+    }
+    if ($("#f_email").val() === "") {
+        $('.error-mail').show();
+        $("#f_email").addClass('red-border');
+        check = false;
+    }
+    if ($('#f_civility option:selected').val() === "") {
         $('#f_civility').addClass("red-border");
         $('.error-civility').show();
         check = false;
     }
+
+
 
     if ($('#f_email').val() !== "") {
         if (!validateEmail($('#f_email').val())) {
