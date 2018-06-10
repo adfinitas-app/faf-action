@@ -53,18 +53,15 @@ $('#btn-letter').click(function() {
     disableTabbingOnPage(tabbableElements);
     enableTabbingOnModal(tabbableElements);
 
-    $('#letter').focus();
 });
 $('#letter .close').click(function() {
     hideLetter();
-    reEnableTabbingOnPage(tabbableElements);
-    $($(':focus')).focus();
 });
 
 $('#submit').click(function(e) {
     e.preventDefault();
     if (validateForm()) {
-        //addVote();
+        addVote();
         $('.body-container').fadeOut(function() {
             $('.merci-container').fadeIn(function() {
                 $('#banniere-end').slideDown("slow", function() {
@@ -72,7 +69,7 @@ $('#submit').click(function(e) {
                 });
             });
         });
-        //sendData();
+        sendData();
     }
 });
 
@@ -88,7 +85,7 @@ $("#banniere-end .form-satisfaction .answer-container a").hover(
     }
 ).click( function(e) {
     e.preventDefault();
-    //sendDataFinalBanniere($(this).index() + 1);
+    sendDataFinalBanniere($(this).index() + 1);
     setTimeout(function () {
         $('#banniere-end').slideUp("slow", function() {
             $('.body').removeClass('margin-body');
@@ -105,6 +102,8 @@ function preload(arrayOfImages) {
 
 function hideLetter() {
     $('#letter').hide();
+    reEnableTabbingOnPage(tabbableElements);
+    $($(':focus')).focus();
 }
 
 function disableTabbingOnPage(tabbableElements) {
