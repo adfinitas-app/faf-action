@@ -33,7 +33,7 @@
 				Comment percevez-vous les actions que nous mettons en œuvre ?<br />
 				Nous avons besoin de votre avis pour agir toujours plus efficacement&nbsp;!<br />
 				Merci de répondre à 6 questions.</p>
-			<a class="je-done-mon-avis" title="Je donne mon avis"><img src="https://s3.amazonaws.com/heroku-adfinitas-campaign/FAF-Scoring/je-donne-mon-avis.png" alt="Je donne mon avis" class="btn-header"></a>
+			<a class="je-done-mon-avis" title="Je donne mon avis" href="#avis"><img src="https://s3.amazonaws.com/heroku-adfinitas-campaign/FAF-Scoring/je-donne-mon-avis.png" alt="Je donne mon avis" class="btn-header"></a>
 		</div>
 	</div>
 </section>
@@ -42,43 +42,23 @@
 		<div class="row max-width">
 			<a href="https://www.aveuglesdefrance.org/" target="_blank"><img alt="Logo Fédération Aveugles de France - S'ouvre dans une nouvelle fenêtre" src="https://s3.amazonaws.com/heroku-adfinitas-campaign/FAF-Scoring/logo-faf.png" class="logo"></a>
 			<div id="question-number">
-				<p><span id="q-nb">1</span>/6</p>
+				<p id="container-q-nb" title="Question 1 sur 6"><span id="q-nb">1</span>/6</p>
 			</div>
 			<div class="row questions-container">
-				<h2 id="title">Faire un don à la Fédération des Aveugles de France<br />est une très bonne façon d’aider les personnes<br />déficientes visuelles.</h2>
+				<h1 id="title">Faire un don à la Fédération des Aveugles de France<br />est une très bonne façon d’aider les personnes<br />déficientes visuelles.</h1>
 				<div class="answer-container">
 					<p class="precision">Choisissez une note de 1 à 10, 1 étant la valeur minimum et 10 la valeur maximum</p>
 					<p class="scale">pas du tout</p>
-					<div class="answer">
-						<a title="Note 1 sur 10" class="number">1</a>
-					</div>
-					<div class="answer">
-						<a title="Note 2 sur 10" class="number">2</a>
-					</div>
-					<div class="answer">
-						<a title="Note 3 sur 10" class="number">3</a>
-					</div>
-					<div class="answer">
-						<a title="Note 4 sur 10" class="number">4</a>
-					</div>
-					<div class="answer">
-						<a title="Note 5 sur 10" class="number">5</a>
-					</div>
-					<div class="answer">
-						<a title="Note 6 sur 10" class="number">6</a>
-					</div>
-					<div class="answer">
-						<a title="Note 7 sur 10" class="number">7</a>
-					</div>
-					<div class="answer">
-						<a title="Note 8 sur 10" class="number">8</a>
-					</div>
-					<div class="answer">
-						<a title="Note 9 sur 10" class="number">9</a>
-					</div>
-					<div class="answer small">
-						<a title="Note 10 sur 10" class="number">10</a>
-					</div>
+						<a title="Note 1 sur 10" class="answer number" href="">1</a>
+						<a title="Note 2 sur 10" class="answer number" href="">2</a>
+						<a title="Note 3 sur 10" class="answer number" href="">3</a>
+						<a title="Note 4 sur 10" class="answer number" href="">4</a>
+						<a title="Note 5 sur 10" class="answer number" href="">5</a>
+						<a title="Note 6 sur 10" class="answer number" href="">6</a>
+						<a title="Note 7 sur 10" class="answer number" href="">7</a>
+						<a title="Note 8 sur 10" class="answer number" href="">8</a>
+						<a title="Note 9 sur 10" class="answer number" href="">9</a>
+						<a title="Note 10 sur 10" class="answer small number" href="">10</a>
 					<p class="scale">tout à fait</p>
 				</div>
 			</div>
@@ -91,21 +71,24 @@
 			<div class="row max-width">
 				<a href="https://www.aveuglesdefrance.org/" target="_blank"><img alt="Logo Fédération Aveugles de France - S'ouvre dans une nouvelle fenêtre" src="https://s3.amazonaws.com/heroku-adfinitas-campaign/FAF-Scoring/logo-nb.png" class="logo"></a>
 				<div class="small-12 large-5 large-centered columns form-container">
-					<h3>Merci de compléter ces informations pour soumettre vos réponses</h3>
+					<h1>Merci de compléter ces informations pour soumettre vos réponses</h1>
 					<div class="row">
 						<form>
-							<p class="error error-generic">Ces champs sont obligatoires</p>
+							<p class="obligatoire">* Champ Obligatoire</p>
+							<p class="error error-firstname">Merci de renseigner votre prénom</p>
+							<p class="error error-lastname">Merci de renseigner votre nom de famille</p>
 							<p class="error error-civility">Merci de renseigner votre civilité</p>
+							<p class="error error-mail">Merci de renseigner votre email</p>
 							<p class="error error-mail-wrong">Le format de l'e-mail est incorrect</p>
 							<p class="error error-phone-wrong">Le format du téléphone est incorrect</p>
 							<div class="civilite-container" role="group">
-								<div class="round margin">
-									<input name="civility" type="checkbox" id="f_female" required aria-checked="false" role="checkbox" tabindex="0" aria-labelledby="f_female"/>
+								<div class="round margin female" role="checkbox" tabindex="0" aria-checked="false" aria-labelledby="f_female">
+									<input name="civility" type="checkbox" id="f_female" required  />
 									<label class="box" for="f_female"></label>
 									<label for="f_female">Madame</label>
 								</div>
-								<div class="round">
-									<input name="civility" type="checkbox" id="f_male" required aria-checked="false" role="checkbox" tabindex="0" aria-labelledby="f_male"/>
+								<div class="round male" role="checkbox" tabindex="0" aria-checked="false" aria-labelledby="f_male">
+									<input name="civility" type="checkbox" id="f_male"/>
 									<label class="box" for="f_male"></label>
 									<label for="f_male">Monsieur</label>
 								</div>
@@ -114,7 +97,6 @@
 							<input id="f_firstname" type="text" placeholder="Prénom*" title="Prénom*" class="required" required>
 							<input id="f_email" type="email" placeholder="Email*" title="Email*" class="required" required>
 							<input id="f_phone" type="text" placeholder="Téléphone (facultatif)" title="Téléphone (facultatif)">
-							<p class="obligatoire">* Champ Obligatoire</p>
 							<button id="submit" type="submit">Valider</button>
 						</form>
 					</div>
@@ -141,7 +123,7 @@
 					<img alt="Merci pour votre participation !" src="https://s3.amazonaws.com/heroku-adfinitas-campaign/FAF-Scoring/bulle-merci.png">
 				</div>
 				<div class="small-12 large-9 columns title">
-					<h5>Vos réponses nous permettront<br />d’orienter nos actions et communications<br />pour leur donner toujours plus d’impact.</h5>
+					<h1>Vos réponses nous permettront<br />d’orienter nos actions et communications<br />pour leur donner toujours plus d’impact.</h1>
 					<p>Aujourd’hui, rejoignez-nous par un don&nbsp;!<br />
 						La Fédération des Aveugles de France compte sur la générosité de personnes comme vous pour faire progresser les droits des personnes déficientes visuelles, améliorer leurs conditions de vie et financer la recherche en ophtalmologie.
 						<br />Votre don change la vie des personnes aveugles et malvoyantes. Merci&nbsp;!</p>
@@ -151,51 +133,61 @@
 				<div class="small-12 large-11 small-centered columns">
 					<p>Je fais un DON de :</p>
 					<div class="row">
-						<a href="https://faf.iraiser.eu/b?cid=23&amount=6000" target="_blank" title="Je fais un don de 60€ - S'ouvre dans une nouvelle fenêtre">
-							<div class="box no-margin-left">
-								<div class="row">
-									<div class="small-4 columns number">
-										<p>60<span>€</span></p>
+
+
+						<ul>
+							<li><a href="https://faf.iraiser.eu/b?cid=23&amount=6000" target="_blank" title="Je fais un don de 60€ - S'ouvre dans une nouvelle fenêtre">
+								<div class="box no-margin-left">
+									<div class="row">
+										<div class="small-4 columns number">
+											<p>60<span>€</span></p>
+										</div>
+										<div class="small-8 columns deduc">
+											<p>(20,40 € après<br />déduction fiscale)</p>
+										</div>
 									</div>
-									<div class="small-8 columns deduc">
-										<p>(20,40 € après<br />déduction fiscale</p>
-									</div>
-								</div>
-								<div class="row equivalence">
-									<p>Pour contribuer à la transcription<br />de manuels scolaires en braille</p>
-								</div>
-							</div>
-						</a>
-						<a href="https://faf.iraiser.eu/b?cid=23&amount=9000" target="_blank" title="Je fais un don de 90€ - S'ouvre dans une nouvelle fenêtre">
-							<div class="box">
-								<div class="row">
-									<div class="small-4 columns number">
-										<p>90<span>€</span></p>
-									</div>
-									<div class="small-8 columns deduc">
-										<p>(30,60 € après<br />déduction fiscale</p>
+									<div class="row equivalence">
+										<p>Pour contribuer à la transcription<br />de manuels scolaires en braille</p>
 									</div>
 								</div>
-								<div class="row equivalence">
-									<p>Pour apprendre à des enfants<br />aveugles à vivre avec leur handicap</p>
-								</div>
-							</div>
-						</a>
-						<a href="https://faf.iraiser.eu/b?cid=23&amount=12000" target="_blank" title="Je fais un don de 120€ - S'ouvre dans une nouvelle fenêtre">
-							<div class="box">
-								<div class="row">
-									<div class="small-5 columns number">
-										<p>120<span>€</span></p>
+							</a></li>
+							<li><a href="https://faf.iraiser.eu/b?cid=23&amount=9000" target="_blank" title="Je fais un don de 90€ - S'ouvre dans une nouvelle fenêtre">
+								<div class="box">
+									<div class="row">
+										<div class="small-4 columns number">
+											<p>90<span>€</span></p>
+										</div>
+										<div class="small-8 columns deduc">
+											<p>(30,60 € après<br />déduction fiscale)</p>
+										</div>
 									</div>
-									<div class="small-7 columns deduc">
-										<p>(40,00 € après<br />déduction fiscale</p>
+									<div class="row equivalence">
+										<p>Pour apprendre à des enfants<br />aveugles à vivre avec leur handicap</p>
 									</div>
 								</div>
-								<div class="row equivalence">
-									<p>Pour participer au financement<br />de la recherche en ophtalmologie</p>
+							</a></li>
+							<li><a href="https://faf.iraiser.eu/b?cid=23&amount=12000" target="_blank" title="Je fais un don de 120€ - S'ouvre dans une nouvelle fenêtre">
+								<div class="box">
+									<div class="row">
+										<div class="small-5 columns number">
+											<p>120<span>€</span></p>
+										</div>
+										<div class="small-7 columns deduc">
+											<p>(40,00 € après<br />déduction fiscale)</p>
+										</div>
+									</div>
+									<div class="row equivalence">
+										<p>Pour participer au financement<br />de la recherche en ophtalmologie</p>
+									</div>
 								</div>
-							</div>
-						</a>
+							</a></li>
+						</ul>
+
+
+
+
+
+
 					</div>
 				</div>
 			</div>

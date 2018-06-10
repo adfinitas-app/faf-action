@@ -14,22 +14,31 @@ $(document).ready( function () {
     fillFieldsFromUrl();
 });
 
+
 $(".answer").hover(
     function() {
         $(this).addClass("active");
     }, function() {
         $(this).removeClass("active");
     }
-).click( function() {
+).focus( function() {
+    $(this).addClass("active");
+}).focusout( function() {
+    $(this).removeClass("active");
+}).click( function(e) {
+    e.preventDefault();
     if (finish)
         return;
     changeQuestion(index + 1, $(this).index());
+    document.title = 'Fédération Aveugles de France - Questionnaire - Question ' + (index + 1) + ' sur 6';
+    $('#container-q-nb').attr('title','Question ' + (index + 1) + ' sur 6');
 });
 
 $('#submit').click(function(e) {
     e.preventDefault();
     if (validateForm()) {
         $('#form').fadeOut(function () {
+            document.title = 'Fédération Aveugles de France - Merci pour votre participation !';
             $('#merci').fadeIn();
             $('footer').fadeIn();
         });
@@ -43,11 +52,48 @@ $('.header .je-done-mon-avis').click( function(e) {
         $('#questions').fadeIn();
     });
 });
-
 $('#f_male').click(function() {
     $(this).attr('aria-checked', 'true');
     $('#f_female').prop( "checked", false);
     $('#f_female').attr('aria-checked', 'false');
+});
+$('.male').keypress(function(e) {
+    var code = e.keyCode || e.which;
+    if(code == 32) {
+        $(this).attr('aria-checked', 'true');
+        $('#f_male').prop( "checked", true);
+
+        $('.female').attr('aria-checked', 'false');
+        $('#f_female').prop( "checked", false);
+        $('#f_female').attr('aria-checked', 'false');
+    }
+});
+$('.male').click(function() {
+    $(this).attr('aria-checked', 'true');
+    $('#f_male').prop( "checked", true);
+
+    $('.female').attr('aria-checked', 'false');
+    $('#f_female').prop( "checked", false);
+    $('#f_female').attr('aria-checked', 'false');
+});
+$('.female').click(function() {
+    $('#f_male').prop( "checked", false );
+    $('#f_female').prop( "checked", true);
+
+    $('.male').attr('aria-checked', 'false');
+    $('#f_male').attr('aria-checked', 'false');
+    $(this).attr('aria-checked', 'true');
+});
+$('.female').keypress(function(e) {
+    var code = e.keyCode || e.which;
+    if(code == 32) {
+        $('#f_male').prop( "checked", false );
+        $('#f_female').prop( "checked", true);
+
+        $('.male').attr('aria-checked', 'false');
+        $('#f_male').attr('aria-checked', 'false');
+        $(this).attr('aria-checked', 'true');
+    }
 });
 $('#f_female').click(function() {
     $('#f_male').prop( "checked", false );
@@ -117,6 +163,7 @@ function checkLastQuestion(nb, selected) {
         check = true;
         $('#questions').fadeOut(function() {
             $('#form').fadeIn(function() {
+                document.title = 'Fédération Aveugles de France - Merci de compléter le formulaire pour soumettre vos réponses';
                 window.scroll(0, 0);
             });
         });
@@ -159,18 +206,35 @@ function validateForm() {
 
 
     $('.error').hide();
-    $('.civilite-container *').css('color','black');
+    $('#f_civility').removeClass("red-border");
     $('#form input').each( function() {
         $(this).removeClass('red-border');
-
-        if ($(this).hasClass('required')) {
-            if ($(this).val() === "") {
-                $('.error-generic').show();
-                $(this).addClass('red-border');
-                check = false;
-            }
-        }
     });
+
+
+
+    if ($("#f_firstname").val() === "") {
+        $('.error-firstname').show();
+        $("#f_firstname").addClass('red-border');
+        check = false;
+    }
+    if ($("#f_lastname").val() === "") {
+        $('.error-lastname').show();
+        $("#f_lastname").addClass('red-border');
+        check = false;
+    }
+    if ($("#f_email").val() === "") {
+        $('.error-mail').show();
+        $("#f_email").addClass('red-border');
+        check = false;
+    }
+    if ($('#f_civility option:selected').val() === "") {
+        $('#f_civility').addClass("red-border");
+        $('.error-civility').show();
+        check = false;
+    }
+
+
 
     if (selectedOption === "") {
         $('.civilite-container *').css('color','red');
