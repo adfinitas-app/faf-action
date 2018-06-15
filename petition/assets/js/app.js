@@ -77,7 +77,7 @@ var text;
 $("#banniere-end .form-satisfaction .answer-container a").hover(
     function() {
         text = $(this).text();
-        $(this).text(".");
+        $(this).text("_");
         $(this).css('background-image','url("https://s3.amazonaws.com/heroku-adfinitas-campaign/FAF-petition/rect-ok.jpg")');
     }, function() {
         $(this).text(text);
@@ -138,7 +138,16 @@ function validateForm() {
     });
 
 
-
+    if ($('#f_civility option:selected').val() === "") {
+        $('#f_civility').addClass("red-border");
+        $('.error-civility').show();
+        check = false;
+    }
+    if ($("#f_email").val() === "") {
+        $('.error-mail').show();
+        $("#f_email").addClass('red-border');
+        check = false;
+    }
     if ($("#f_firstname").val() === "") {
         $('.error-firstname').show();
         $("#f_firstname").addClass('red-border');
@@ -149,16 +158,8 @@ function validateForm() {
         $("#f_lastname").addClass('red-border');
         check = false;
     }
-    if ($("#f_email").val() === "") {
-        $('.error-mail').show();
-        $("#f_email").addClass('red-border');
-        check = false;
-    }
-    if ($('#f_civility option:selected').val() === "") {
-        $('#f_civility').addClass("red-border");
-        $('.error-civility').show();
-        check = false;
-    }
+
+
 
 
 
