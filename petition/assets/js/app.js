@@ -33,15 +33,30 @@ function addVote() {
 
 }
 
-$("label[for='optin']").click(function() {
+$("#optin").click(function() {
     if (!checked) {
-        $('#imgCheckbox').attr('src', 'https://s3.amazonaws.com/heroku-adfinitas-campaign/FAF-petition/check-v.png');
+        $('#optin').attr('src', 'https://s3.amazonaws.com/heroku-adfinitas-campaign/FAF-petition/check-v.png');
         $('#optin').attr('aria-checked', 'true');
         checked = true;
     } else {
         checked = false;
-        $('#imgCheckbox').attr('src', 'https://s3.amazonaws.com/heroku-adfinitas-campaign/FAF-petition/check.png');
+        $('#optin').attr('src', 'https://s3.amazonaws.com/heroku-adfinitas-campaign/FAF-petition/check.png');
         $('#optin').attr('aria-checked', 'false');
+    }
+});
+
+$("#optin").keypress(function(e) {
+    var code = e.keyCode || e.which;
+    if(code == 32) {
+        if (!checked) {
+            $('#optin').attr('src', 'https://s3.amazonaws.com/heroku-adfinitas-campaign/FAF-petition/check-v.png');
+            $('#optin').attr('aria-checked', 'true');
+            checked = true;
+        } else {
+            checked = false;
+            $('#optin').attr('src', 'https://s3.amazonaws.com/heroku-adfinitas-campaign/FAF-petition/check.png');
+            $('#optin').attr('aria-checked', 'false');
+        }
     }
 });
 
