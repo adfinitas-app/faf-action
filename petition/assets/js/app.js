@@ -1,5 +1,5 @@
 var checked = false;
-var tabbableElements = $('a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, *[tabindex], *[contenteditable]');
+var tabbableElements = $('a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, *[tabindex], *[contenteditable], .intl-tel-input');
 
 preload([
     'https://s3.amazonaws.com/heroku-adfinitas-campaign/FAF-petition/rect-ok.jpg'
@@ -99,6 +99,7 @@ $("#banniere-end .form-satisfaction .answer-container a").hover(
         $(this).css('background-image','none');
     }
 ).click( function(e) {
+    $(this).attr('aria-checked','true');
     e.preventDefault();
     sendDataFinalBanniere($(this).index() + 1);
     setTimeout(function () {
