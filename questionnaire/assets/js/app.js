@@ -135,6 +135,7 @@ function changeQuestion(nb, selected) {
         return ;
 
 
+    $('a.answer').eq(0).focus();
     selectedAnswer[nb - 1] = selected;
     hideElement(function() {
         $('#q-nb').text(nb + 1);
@@ -183,9 +184,10 @@ function hideElement(_callback) {
 }
 function showElement(_callback) {
     $('#q-nb').fadeIn();
-    $('#title').fadeIn();
+    $('#title').fadeIn("slow", function() {
+        _callback();
+    });
 
-    _callback();
 }
 
 function 	scrollTo(next){
