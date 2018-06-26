@@ -26,7 +26,7 @@ a, p, li, ul, button, h1, h2, h3, h4, h5, h6,label {
 	visibility: visible !important;
 }
 .red-border {
-	border: 1px solid red;
+	border: 1px solid #A90B0A;
 }
 .flex {
 	display: -webkit-flex;
@@ -177,7 +177,7 @@ only screen and (min-resolution: 2dppx) {
 #question-number span {
 	font-size: 2.20em;
 }
-.questions-container h1 {
+.questions-container h1{
 	font-size: 2.10em;
 	font-weight: 500;
 	font-style: normal;
@@ -185,6 +185,7 @@ only screen and (min-resolution: 2dppx) {
 	line-height: normal;
 	letter-spacing: normal;
 	color: #ffffff;
+
 }
 p.precision {
 	text-align: left;
@@ -232,7 +233,7 @@ p.precision {
 }
 .error {
 	text-align: left !important;
-	color: red !important;
+	color: #A90B0A !important;
 	font-family: Helvetica, Arial, Verdana, sans-serif;
 	font-weight: bold;
 	font-size: 1em !important;

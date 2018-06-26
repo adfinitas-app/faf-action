@@ -1,5 +1,5 @@
 var checked = false;
-var tabbableElements = $('a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, *[tabindex], *[contenteditable], .intl-tel-input');
+var tabbableElements = $('a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, *[tabindex], *[contenteditable], .intl-tel-input, .selected-flag');
 
 preload([
     'https://s3.amazonaws.com/heroku-adfinitas-campaign/FAF-petition/rect-ok.jpg'

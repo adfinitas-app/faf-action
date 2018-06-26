@@ -134,8 +134,7 @@ function changeQuestion(nb, selected) {
     if (index > titleQuestions.length - 1)
         return ;
 
-
-    $('a.answer').eq(0).focus();
+    $('#title').focus();
     selectedAnswer[nb - 1] = selected;
     hideElement(function() {
         $('#q-nb').text(nb + 1);
@@ -144,6 +143,7 @@ function changeQuestion(nb, selected) {
     showElement(function() {
         removeActive();
         $('#title').focus();
+        $('a.answer').eq(0).focus();
     });
 
     index = nb;
@@ -239,7 +239,7 @@ function validateForm() {
 
 
     if (selectedOption === "") {
-        $('.civilite-container *').css('color','red');
+        $('.civilite-container *').css('color','#A90B0A');
         $('.error-civility').show();
         check = false;
     }
