@@ -399,6 +399,25 @@ div.title img:nth-child(2) {
 .footer .right a:nth-child(1) {
 	margin-right: 20px;
 }
+@media screen and (min-width: 1470px) {
+	.other .box-histoire:nth-child(1) {
+		background-size: cover;
+		padding-top: 400px;
+		padding-bottom: 880px;
+		top: -250px;
+	}
+	.other .box-histoire:nth-child(1) div {
+		margin-top: 400px;
+	}
+	.other .box-histoire:nth-child(2) {
+		top: 1610px
+	}
+
+	.container-don {
+		top: -100px;
+		padding-top: 550px;
+	}
+}
 @media screen and (max-width: 1024px) {
 	.other .box-histoire:nth-child(1) {
 		top: -130px;
