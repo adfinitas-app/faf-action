@@ -25,6 +25,12 @@ outline: solid #f00 1px !important;
 	top: 20px;
 	left: 20px;
 }
+.header .bubbbles {
+	position: absolute;
+	right: 25%;
+	bottom: 10px;
+
+}
 .header .container-title {
 	margin: auto;
 	position: absolute;
@@ -134,7 +140,7 @@ div.title img:nth-child(2) {
 .container-don {
 	text-align: center;
 	position: absolute;
-	top: -300px;
+	top: -180px;
 	left: 0;
 	width: 100%;
 
@@ -410,7 +416,7 @@ div.title img:nth-child(2) {
 		margin-top: 400px;
 	}
 	.other .box-histoire:nth-child(2) {
-		top: 1610px
+		top: 1810px
 	}
 
 	.container-don {
@@ -449,6 +455,9 @@ div.title img:nth-child(2) {
 @media screen and (max-width: 640px) {
 	.header h1 {
 		font-size: 24px;
+	}
+	.header .bubbbles {
+		max-width: 100px;
 	}
 	.box-histoire .left {
 		margin-bottom: 40px;
