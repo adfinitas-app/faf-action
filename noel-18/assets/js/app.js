@@ -1,5 +1,10 @@
+$(document).ready( function () {
+    initRange();
+    fillLink();
+});
 
-$(function() {
+
+function initRange() {
     let range = $('#range');
 
     range.on('input', function() {
@@ -35,4 +40,38 @@ $(function() {
         $(this).next().css('left', v + "%");
         $('#nb-don-return').text(Math.round(ret));
     });
-});
+}
+
+function extractUrlParams(){
+    var t = document.location.search.substring(1).split('&'); var f = [];
+    for (var i=0; i<t.length; i++){
+        var x = t[ i ].split('=');
+        f[x[0]]=decodeURIComponent(x[1]);
+    }
+    return f;
+};
+
+function fillLink() {
+    console.log('HERE');
+    let p = extractUrlParams();
+
+    let string = "";
+
+    if (p['email'] && p['email'] !== "undefined")
+        string += ("&email=" + p['email']);
+    if (p['wv_email'] && p['wv_email'] !== "undefined")
+        string += ("&email=" + p['wv_email']);
+    if (p['wv_firstname'] && p['wv_firstname'] !== "undefined")
+        string += ("&firstname=" + p['wv_firstname']);
+    if (p['firstname'] && p['firstname'] !== "undefined")
+        string += ("&firstname=" + p['firstname']);
+    if (p['wv_lastname'] && p['wv_lastname'] !== "undefined")
+        string += ("&lastname=" + p['wv_lastname']);
+    if (p['lastname'] && p['lastname'] !== "undefined")
+        string += ("&lastname=" + p['lastname']);
+
+    $('.link-don').each(function() {
+        let src = $(this).attr('href');
+        $(this).attr('href', src + string);
+    });
+}

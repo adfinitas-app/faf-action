@@ -37,7 +37,13 @@ outline: solid #f00 1px !important;
 	top: 0; left: 0; bottom: 0; right: 0;
 	height: 10px;
 }
-
+#btn-don {
+	display: block;
+	position: fixed;
+	top: 20px;
+	right: 20px;
+	z-index: 99;
+}
 .header h1 {
 	text-transform: uppercase;
 	font-family: "Open Sans", serif;
@@ -178,6 +184,13 @@ div.title img:nth-child(2) {
 	margin-left: 10px;
 	margin-right: 10px;
 	max-width: 250px;
+
+	-webkit-transition: all .5s;
+	-moz-transition: all .5s;
+	transition: all .5s;
+}
+.container-don .box-don:hover {
+	transform: scale(1.05);
 }
 .container-don .box-don .up {
 	height: 330px;
@@ -453,6 +466,9 @@ div.title img:nth-child(2) {
 	}
 }
 @media screen and (max-width: 640px) {
+	#btn-don {
+		max-width: 100px;
+	}
 	.header h1 {
 		font-size: 24px;
 	}
