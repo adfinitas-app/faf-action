@@ -189,7 +189,8 @@ div.title img:nth-child(2) {
 	-moz-transition: all .5s;
 	transition: all .5s;
 }
-.container-don .box-don:hover {
+.container-don .box-don:hover,
+.container-don .box-don:focus {
 	transform: scale(1.05);
 }
 .container-don .box-don .up {
@@ -248,7 +249,7 @@ div.title img:nth-child(2) {
 	margin-bottom: 0;
 	line-height: 1;
 }
-.container-don .box-don a {
+.container-don .box-don div.btn {
 	display: block;
 	font-family: "Open Sans", serif;
 	color: black;
