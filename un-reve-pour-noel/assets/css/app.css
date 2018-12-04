@@ -106,7 +106,7 @@ div.title img:nth-child(2) {
 
 	margin-bottom: 60px;
 }
-.box-histoire h5 {
+.box-histoire h2 {
 	color: #fdc131;
 	font-size: 50px;
 	font-family: "Open Sans", serif;
@@ -116,7 +116,7 @@ div.title img:nth-child(2) {
 	margin-top: 5px;
 	margin-bottom: 5px;
 }
-.box-histoire h6 {
+.box-histoire h3 {
 	color: #424242;
 	font-size: 25px;
 	font-family: "Open Sans", serif;
@@ -155,7 +155,7 @@ div.title img:nth-child(2) {
 	background-repeat: no-repeat;
 	padding-top: 450px;
 }
-.container-don h3 {
+.container-don h1 {
 	text-transform: uppercase;
 	font-family: "Open Sans", serif;
 	font-weight: 600;
